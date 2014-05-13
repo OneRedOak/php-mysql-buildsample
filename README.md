@@ -1,4 +1,4 @@
-php-buildsample
+php-mysql-buildsample
 ===============
 
-Build sample for PHP 
+Build sample for PHP and MySQL

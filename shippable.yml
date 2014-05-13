@@ -6,7 +6,7 @@ before_script:
   - mkdir -p shippable/testresults
 
 script:
-   - phpunit  --log-junit shippable/testresults/junit.xml tests/calculator_test.php
+   - phpunit  --log-junit shippable/testresults/junit.xml tests/phpApp_test.php
 
 notifications:
    email: false

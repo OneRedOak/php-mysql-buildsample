@@ -1,11 +1,11 @@
 {
-    "name": "php-sample",
-    "description": "simple calculator program in php.",
-    "keywords": ["multiply", "add", "subtract"],
+    "name": "php_sample_mysql",
+    "description": "simple program in php with mysql.",
+    "keywords": ["php", "mysql"],
     "license": "MIT",
     "authors": [
         {
-            "name": "vidya"
+            "name": "patrick"
         }
     ],
     "require": {
