@@ -1,5 +1,5 @@
 <?php
-require_once('phpApp.php');
+require_once('../phpApp.php');
 class PhpAppTest extends PHPUnit_Framework_TestCase{
   
   public function testFindData(){
