@@ -2,7 +2,7 @@
 require_once('phpApp.php');
 class PhpAppTest extends PHPUnit_Framework_TestCase{
   
-  public function findDataTest(){
+  public function testFindData(){
       $phpApp = new PhpApp();
       $dbLink = connectToDb(); // Connects to DB, creating new one if needed
       setData($dbLink); // Creates table, sets columns & data
