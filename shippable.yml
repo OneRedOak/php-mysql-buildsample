@@ -4,6 +4,7 @@ php:
   - 5.4
 before_script: 
   - mkdir -p shippable/testresults
+  - mysql -e 'create database if not exists test;'
 
 script:
    - phpunit  --log-junit shippable/testresults/junit.xml tests/phpApp_test.php
