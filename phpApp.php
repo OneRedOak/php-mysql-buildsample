@@ -15,8 +15,8 @@ class PhpApp {
 		/* Returns ContactName data */
 		mysqli_real_query($link, "SELECT ContactName FROM test");
 		$result = mysqli_use_result($link);
-		printf("Returning Query result: " . $result["ContactName"]);
-		return $result["ContactName"];
+		printf("Returning Query result: " . $result->fetch_array()["ContactName"]);
+		return $result->fetch_array()["ContactName"];
 	}
 }
 ?>
