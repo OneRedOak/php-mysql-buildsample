@@ -13,7 +13,10 @@ class PhpApp {
 		printf("Customer table populated with data");
 
 		/* Returns ContactName data */
-		return mysqli_query($link, "SELECT ContactName FROM test;");
+		$query = mysqli_query($link, "SELECT ContactName FROM test");
+		$result = mysqli_fetch_array($query);
+		printf("Returning Query result: " . $result["ContactName"]);
+		return $result["ContactName"];
 	}
 }
 ?>
