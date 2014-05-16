@@ -13,8 +13,8 @@ class PhpApp {
 		printf("Customer table populated with data");
 
 		/* Returns ContactName data */
-		$query = mysqli_query($link, "SELECT ContactName FROM test");
-		$result = mysqli_fetch_array($query);
+		mysqli_real_query($link, "SELECT ContactName FROM test");
+		$result = mysqli_use_result($link);
 		printf("Returning Query result: " . $result["ContactName"]);
 		return $result["ContactName"];
 	}
