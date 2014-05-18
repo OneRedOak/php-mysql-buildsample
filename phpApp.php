@@ -14,12 +14,13 @@ class PhpApp {
 
 		/* Returns ContactName data */
 		mysqli_real_query($link, "SELECT ContactName FROM test");
-		$result = mysqli_use_result($link);
-		while ($row = mysqli_fetch_row($result)) {
-            printf("%s\n", $row[0]);
-        }
+		if ($result = mysqli_use_result($link)) {
+			while ($row = mysqli_fetch_row($result)) {
+	            printf("%s\n", $row[0]);
+	        }
+    	}
 		// printf("Returning Query result: " . $result->mysqli_fetch_array()["ContactName"]);
-		return $result->mysqli_fetch_array()["ContactName"];
+		// return $result->mysqli_fetch_array()["ContactName"];
 	}
 }
 ?>
