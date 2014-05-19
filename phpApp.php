@@ -7,7 +7,7 @@ class PhpApp {
 		// Creates table
 		$test1 = mysqli_query($link, "CREATE TABLE IF NOT EXISTS Customer (CustomerName varchar(20), ContactName varchar(20), Address varchar(20));");
 
-		echo("test");
+		echo "---" . $test1 . "---";
 
 		// Checks for table
 		if (!$test1) {
@@ -16,7 +16,7 @@ class PhpApp {
 		}
 		
 		// Populates with sample data
-		mysqli_query($link, "INSERT INTO Customer (CustomerName, ContactName, Address) VALUES ('Cardinal','Tom B. Erichsen','Skagen 21');");
+		echo mysqli_query($link, "INSERT INTO Customer (CustomerName, ContactName, Address) VALUES ('Cardinal','Tom B. Erichsen','Skagen 21');");
 
 		// Returns ContactName data
 
@@ -28,8 +28,9 @@ class PhpApp {
 		
 		if($result = mysqli_query($link, "SELECT ContactName FROM test")) {
 		    /* fetch associative array */
+		    echo $result;
 		    while($row = mysqli_fetch_row($result)) {
-		        printf ("%s", $row[0]);
+		        echo $row[0];
 		        return $row[0];
 		    }
 		    /* free result set */
