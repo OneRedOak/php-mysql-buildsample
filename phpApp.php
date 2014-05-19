@@ -4,24 +4,25 @@ class PhpApp {
 		// connect to the server & database
 		$link = mysqli_connect('127.0.0.1', 'shippable', '', 'test') or die("Error occurred during connection: " . mysqli_error($link));
 
-		/* Creates table */
+		// Creates table
 		$test1 = mysqli_query($link, "CREATE TABLE IF NOT EXISTS Customer;");
-		printf("Customer table created");
 
-		//test code
+		// Checks for table
 		if (!$test1) {
-		    printf("----Customer Table Creation Error----: %s\n", mysqli_error($link));
+		    printf("Customer Table Creation Error: %s\n", mysqli_error($link));
 		    exit();
 		}
 		
-		/* Populates with sample data */
+		// Populates with sample data
 		mysqli_query($link, "INSERT INTO Customer (CustomerName, ContactName, Address) VALUES ('Cardinal','Tom B. Erichsen','Skagen 21');");
-		printf("Customer table populated with data");
 
-		/* Returns ContactName data */
+		// Returns ContactName data
+
+		/*
 		$result = mysqli_query($link, "SELECT ContactName FROM test");
 		$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-		printf ("%s\n", $row["ContactName"]);
+		printf("%s\n", $row["ContactName"]);
+		*/
 		
 		if ($result = mysqli_query($link, "SELECT ContactName FROM test")) {
 		    /* fetch associative array */
