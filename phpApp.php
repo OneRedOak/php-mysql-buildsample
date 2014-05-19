@@ -5,7 +5,7 @@ class PhpApp {
 		$link = mysqli_connect('127.0.0.1', 'shippable', '', 'test') or die("Error occurred during connection: " . mysqli_error($link));
 
 		// Creates table
-		$test1 = mysqli_query($link, "CREATE TABLE IF NOT EXISTS Customer;");
+		$test1 = mysqli_query($link, "CREATE TABLE IF NOT EXISTS Customer (CustomerName varchar(20), ContactName varchar(20), Address varchar(20));");
 
 		// Checks for table
 		if (!$test1) {
