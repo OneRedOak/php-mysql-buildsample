@@ -28,6 +28,8 @@ class PhpApp {
 		
 		$result = mysqli_query($link, "SELECT ContactName FROM test");
 		    /* fetch associative array */
+		echo "|---" . $result . "---|";
+
 	    while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
 	        echo "+++" . $row["ContactName"] . "+++";
 	        return $row["ContactName"];
