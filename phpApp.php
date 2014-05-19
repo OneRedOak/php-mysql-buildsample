@@ -26,14 +26,14 @@ class PhpApp {
 		printf("%s\n", $row["ContactName"]);
 		*/
 		
-		if($result = mysqli_query($link, "SELECT ContactName FROM test")) {
+		$result = mysqli_query($link, "SELECT ContactName FROM test");
 		    /* fetch associative array */
-		    while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-		        echo "+++" . $row[0] . "+++";
-		        return $row[0];
-		    }
-		    /* free result set */
-		    mysqli_free_result($result);
+	    while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+	        echo "+++" . $row[0] . "+++";
+	        return $row[0];
+	    }
+	    /* free result set */
+	    mysqli_free_result($result);
 		}
 
 		echo "__+__" . $result . "__+__";
