@@ -17,15 +17,18 @@ class PhpApp {
 		$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 		printf ("%s\n", $row["ContactName"]);
 		
-		/*
-		if ($result = mysqli_use_result($link)) {
-			while ($row = mysqli_fetch_row($result)) {
-	            printf("%s\n", $row[0]);
-	        }
-    	}
-    	*/
-		printf("Returning Query result: " . $row["ContactName"]);
-		return $row["ContactName"];
+		if ($result = mysqli_query($link, "SELECT ContactName FROM test")) {
+		    /* fetch associative array */
+		    while ($row = mysqli_fetch_row($result)) {
+		        printf ("%s", $row[0]);
+		        return $row[0];
+		    }
+		    /* free result set */
+		    mysqli_free_result($result);
+		}
+
+		// printf("Returning Query result: " . $row["ContactName"]);
+		// return $row["ContactName"];
 	}
 }
 ?>
