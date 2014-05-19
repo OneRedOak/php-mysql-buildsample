@@ -34,7 +34,6 @@ class PhpApp {
 	    }
 	    /* free result set */
 	    mysqli_free_result($result);
-		}
 		// printf("Returning Query result: " . $row["ContactName"]);
 		// return $row["ContactName"];
 	}
