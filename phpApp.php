@@ -7,6 +7,8 @@ class PhpApp {
 		// Creates table
 		$test1 = mysqli_query($link, "CREATE TABLE IF NOT EXISTS Customer (CustomerName varchar(20), ContactName varchar(20), Address varchar(20));");
 
+		echo("test");
+
 		// Checks for table
 		if (!$test1) {
 		    printf("Customer Table Creation Error: %s\n", mysqli_error($link));
@@ -24,9 +26,9 @@ class PhpApp {
 		printf("%s\n", $row["ContactName"]);
 		*/
 		
-		if ($result = mysqli_query($link, "SELECT ContactName FROM test")) {
+		if($result = mysqli_query($link, "SELECT ContactName FROM test")) {
 		    /* fetch associative array */
-		    while ($row = mysqli_fetch_row($result)) {
+		    while($row = mysqli_fetch_row($result)) {
 		        printf ("%s", $row[0]);
 		        return $row[0];
 		    }
