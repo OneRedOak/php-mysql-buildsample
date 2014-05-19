@@ -10,7 +10,7 @@ class PhpApp {
 
 		//test code
 		if (!$test1) {
-		    printf("----Customer Table Creation Error----: %s\n", mysqli_error($con));
+		    printf("----Customer Table Creation Error----: %s\n", mysqli_error($link));
 		    exit();
 		}
 		
