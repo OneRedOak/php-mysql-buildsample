@@ -5,8 +5,14 @@ class PhpApp {
 		$link = mysqli_connect('127.0.0.1', 'shippable', '', 'test') or die("Error occurred during connection: " . mysqli_error($link));
 
 		/* Creates table */
-		mysqli_query($link, "CREATE TABLE IF NOT EXISTS 'Customer'");
+		$test1 = mysqli_query($link, "CREATE TABLE IF NOT EXISTS Customer;");
 		printf("Customer table created");
+
+		//test code
+		if (!$test1) {
+		    printf("----Customer Table Creation Error----: %s\n", mysqli_error($con));
+		    exit();
+		}
 		
 		/* Populates with sample data */
 		mysqli_query($link, "INSERT INTO Customer (CustomerName, ContactName, Address) VALUES ('Cardinal','Tom B. Erichsen','Skagen 21');");
