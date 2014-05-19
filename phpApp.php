@@ -11,12 +11,12 @@ class PhpApp {
 
 		// Checks for table
 		if (!$test1) {
-		    printf("Customer Table Creation Error: %s\n", mysqli_error($link));
+		    echo("Customer Table Creation Error: " . mysqli_error($link));
 		    exit();
 		}
 		
 		// Populates with sample data
-		echo mysqli_query($link, "INSERT INTO Customer (CustomerName, ContactName, Address) VALUES ('Cardinal','Tom B. Erichsen','Skagen 21');");
+		mysqli_query($link, "INSERT INTO Customer (CustomerName, ContactName, Address) VALUES ('Cardinal','Tom B. Erichsen','Skagen 21');");
 
 		// Returns ContactName data
 
@@ -29,7 +29,7 @@ class PhpApp {
 		if($result = mysqli_query($link, "SELECT ContactName FROM test")) {
 		    /* fetch associative array */
 		    while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-		        echo $row[0];
+		        echo "+++" . $row[0] . "+++";
 		        return $row[0];
 		    }
 		    /* free result set */
