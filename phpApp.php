@@ -36,6 +36,8 @@ class PhpApp {
 		    mysqli_free_result($result);
 		}
 
+		echo "__+__" . $result . "__+__";
+
 		// printf("Returning Query result: " . $row["ContactName"]);
 		// return $row["ContactName"];
 	}
