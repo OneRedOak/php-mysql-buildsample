@@ -29,15 +29,12 @@ class PhpApp {
 		$result = mysqli_query($link, "SELECT ContactName FROM test");
 		    /* fetch associative array */
 	    while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-	        echo "+++" . $row[0] . "+++";
-	        return $row[0];
+	        echo "+++" . $row["ContactName"] . "+++";
+	        return $row["ContactName"];
 	    }
 	    /* free result set */
 	    mysqli_free_result($result);
 		}
-
-		echo "__+__" . $result . "__+__";
-
 		// printf("Returning Query result: " . $row["ContactName"]);
 		// return $row["ContactName"];
 	}
